@@ -1,0 +1,11 @@
+Solid design priciple
+    1. Single Responsibility Principle (SRP) 
+        คลาสใดๆ ควรที่จะ focus ไปที่ job เดียว
+    2. Open/Closed Principle (OCP)
+         class A/interface A สามารถ ถูก inheritance/implement ไปสู่ class อื่นๆได้ โดยไม่ควรแก้ไข class A / interface A
+    3. Liskov Substitution Principle (LSP)
+        class ลูก ควรจะทำงานแทน class แม่ ได้
+    4. Interface Segregation Principle (ISP)
+        class ใดๆ ไม่ควรถูกบังคับให้ใช้ หรือเกี่ยวข้องกับสิ่งที่ไม่เกี่ยงข้องกับตัวมันเอง
+    5. Dependency Inversion Principle (DIP)
+        การติดต่อระหว่าง 2 class ใดๆ ควรติดต่อกันผ่าน abstraction (interface / abstract class) 

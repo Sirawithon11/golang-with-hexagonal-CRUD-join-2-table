@@ -1,0 +1,17 @@
+Layer ของ Architecture
+    1. Interface layer = ไปคุยกับ user แล้วนำ ข้อมูลเข้ามา layer ถัดไป
+    2.Domain layer = logic สำหรับนำข้อมูลที่ได้ไปดำเนินการต่างๆ ไปเก็บใน database แล้วส่งกลับ interface layer
+
+Component is used  each of he layer
+    1.Ports (interface) = เป็นส่วนกำหนด spec เพื่อจะนำข้อมูลที่มาจาก Adapter ไปที่ core (ถ้า spec ของข้อมูลไม่ตรงจะเข้าไปประมวลผลไม่ได้ , ถ้า spec 
+              จาก Adapter เป็น A แล้ว portก็จะเชื่อมข้อมูลไป logic A ใน core ) หรือนำข้อมูลที่ผ่านการประมวลผลแล้วคืนค่า
+    2.Adapters = เป็นส่วนที่รับข้อมูลจาก ภายนอกมาปรับให้ตรงกับ port ที่ซึ่งจะนำข้อมูลไปใช้ใน logic ที่ต้องการ
+    3.core = เป็นส่วนที่เก็บ logic ทั้งหมด โดย แต่ละ logic จะเชื่อม กับ port ของตัวมันเอง
+
+kind of Adapter
+    1.primary Adapter = ส่วนในการรับข้อมูล(input)จากภายนอก
+    2.secondary Adapter = รับข้อมูลจาก secondary port และนำ spec ที่ได้ต้อจาก port นำทางข้อมูลไปต่อ
+
+kind of port
+    1.primary port = เป็น spec สำหรับตรวจสอบข้อมูลขาเข้า (input) เพื่อคัดกรองไปสู่ logic ที่เราต้องการ
+    2.secondary port = หลังจาก run logic เสร็จ จะมีการ config spec เพื่อเลือกเส้นทางไปให้ secondary port 
