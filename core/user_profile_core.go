@@ -66,7 +66,7 @@ func (u *UserProfileCore) DeleteUserProfile(id uint) error {
 
 func (u *UserProfileCore) SearchUserByName(name string) ([]*model.UserProfile, error) {
 	// Business logic validation
-	if strings.TrimSpace(name) == "" {
+	if strings.TrimSpace(name) == "" { // ฟังก์ชันนี้จะตัดช่องว่าง (spaces, tabs, newlines) ออกจากต้นและท้ายของ string name
 		return nil, errors.New("search name cannot be empty")
 	}
 
